@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+}
+
+/* 表格样式 */
+.cal {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  max-width: 30em;
+  margin: 100px auto;
+  font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
+}
+
+/* 表格标题样式 */
+.cal caption {
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  line-height: 2;
+  font-size: 1.5em;
+}
+
+/* 周六周日样式 */
+.cal-weekend {
+  /* 兼容不支持rgba的浏览器(IE */
+  background-color: #fef0f0;
+  background-color: rgba(255, 0, 0, 0.05);
+}
+
+/* 表头以及表内单元格样式 */
+.cal th,
+.cal td {
+  line-height: 3;
+  padding: 0;
+  /* 单元格的宽度占表宽的1/7 */
+  width: 14.285%;
+}
+
+.cal td {
+  border: 1px solid #eee;
+}
+
+.cal thead {
+  border-bottom: 3px solid #666;
+}
+
+.cal a {
+  display: block;
+  text-decoration: none;
+  color: #2f273c;
+  text-align: center;
+}
+
+.cal a:hover,
+.cal a:focus {
+  /* 兼容不支持rgba的浏览器(IE */
+  background-color: #cde7ca;
+  background-color: rgba(167, 240, 210, 0.3);
+}
+
+/* 非当前月份的样式 */
+.cal-inactive {
+  background-color: #efefef;
+  color: #aaa;
+  cursor: not-allowed;
+  text-align: center;
+}
+
+.cal-current {
+  /* 兼容不支持rgba的浏览器(IE */
+  background-color: #7d5977;
+  background-color: rgba(71, 14, 62, 0.6);
+  color: #fff;
+}
+
+.cal-current a {
+  color: #fff;
+}
