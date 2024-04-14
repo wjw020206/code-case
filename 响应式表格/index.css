@@ -61,6 +61,7 @@ body {
     width: 40%;
     display: inline-block;
     font-style: italic;
+    /* 获取元素data-label属性的值作为内容 */
     content: attr(data-label);
   }
 }
