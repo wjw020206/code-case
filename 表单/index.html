@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>表单</title>
+  </head>
+  <body>
+    <form id="comments_form" action="/comments/" method="post">
+      <!-- Your Contact Details -->
+      <div class="fieldset-wrapper">
+        <fieldset>
+          <legend>Your Contact Details</legend>
+          <!-- 姓名 -->
+          <p class="field field-text">
+            <label for="comment-author">Name:</label>
+            <input name="comment-author" id="comment-author" type="text" />
+          </p>
+          <!-- 邮箱地址 -->
+          <p class="field field-text">
+            <label for="comment-email">Email Address:</label>
+            <input name="comment-email" id="comment-email" type="email" />
+          </p>
+          <!-- 网站地址 -->
+          <p class="field field-text">
+            <label for="comment-url">Web Address:</label>
+            <input
+              placeholder="http://example.com"
+              name="comment-url"
+              id="comment-url"
+              type="url"
+              aria-describedby="comment-url-help"
+            />
+            <!-- 提示内容 -->
+            <span id="comment-url-help" role="tooltip" class="form-help">
+              Fill in your URL if you have one. Make sure to include the
+              "http://"-part.
+            </span>
+          </p>
+        </fieldset>
+      </div>
+      <!-- Comments -->
+      <div class="fieldset-wrapper">
+        <fieldset>
+          <legend>Comments</legend>
+          <p class="field field-text">
+            <label for="comment-text">Message:</label>
+            <textarea name="comment-text" id="comment-text"></textarea>
+          </p>
+        </fieldset>
+      </div>
+      <!-- Remember Me -->
+      <div class="fieldset-wrapper">
+        <fieldset>
+          <legend>Remember Me</legend>
+          <p class="field">
+            <label>
+              <input name="comment-remember" type="radio" value="yes" />
+              Yes</label
+            >
+          </p>
+          <p class="field">
+            <label>
+              <input
+                name="comment-remember"
+                type="radio"
+                value="no"
+                checked="checked"
+              />
+              No</label
+            >
+          </p>
+        </fieldset>
+      </div>
+      <button>Post comment</button>
+    </form>
+  </body>
+</html>

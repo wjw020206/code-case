@@ -1,0 +1,151 @@
+/* 清除fieldset的默认样式 */
+fieldset {
+  border: 0;
+  /* 0.01px 为了避免Webkit浏览器一些奇怪行为(legend后面元素的任何外边距都会传递到fieldset元素的上方) */
+  padding: 0.01px 0 0 0;
+  margin: 0;
+  /* 覆盖部分浏览器给fieldset元素的最小宽度 */
+  min-width: 0;
+}
+
+/* 只在Firefox浏览器下显示table-cell模式，如果table-cell直接应用元素，在IE中会出问题 */
+@-moz-document url-prefix() {
+  fieldset {
+    /* Firefox也会给最小宽度，无法使用min-width覆盖，只能把显示模式改为table-cell */
+    display: table-cell;
+  }
+}
+
+.fieldset-wrapper {
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #eee;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+/* 在支持:root选择符的浏览器不显示边框 */
+:root .fieldset-wrapper {
+  border: 0;
+}
+
+legend {
+  color: #777;
+  /* legend元素在不同浏览器应用外边距效果不一样，此处只能使用内边距 */
+  padding: 0 0 0.5em 0;
+  font-weight: bold;
+  /* 让IE必要时包含多行文本 */
+  display: table;
+}
+
+input,
+textarea {
+  /* 让表单控件继承其它部分的字体属性 */
+  font: inherit;
+}
+
+textarea {
+  height: 10em;
+  resize: vertical;
+}
+
+.field-text {
+  max-width: 20em;
+}
+
+/* 表单校验失败的样式 */
+.field-text :invalid {
+  background-color: #e72633;
+  box-shadow: 0 0 0.5em rgba(229, 43, 37, 0.5);
+}
+
+.field-text label {
+  display: block;
+  cursor: pointer;
+}
+
+.field-text label,
+.field-text input,
+.field-text textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field-text input,
+.field-text textarea {
+  padding: 0.375em 0.3125em 0.3125em;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  /* 设置border属性会去掉系统默认添加的边框以及内阴影，但某些浏览器(IOS)上的仍然会显示内阴影，需要使用 -webkit-appearance: none; 去除 */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.field-text input:focus,
+.field-text textarea:focus {
+  box-shadow: 0 0 0.5em rgba(93, 162, 248, 0.5);
+  border-color: #5da2f8;
+  outline: 0;
+}
+
+input[type='radio'] {
+  margin-right: 0.75em;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  padding: 0.5em 1em;
+  color: #fff;
+  border-radius: 0.25em;
+  font-size: 1em;
+  background-color: #173b6d;
+  background-image: linear-gradient(to bottom, #1a4a8e, #173b6d);
+  box-shadow: 0 0.25em 0 rgba(23, 59, 109, 0.3),
+    inset 0 1px 0 rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+button:focus {
+  background-color: #2158a9;
+  background-image: linear-gradient(to bottom, #2063c0, #1d4d90);
+  box-shadow: 0 0.25em 0 rgba(23, 59, 109, 0.3),
+    inset 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+::-ms-input-placeholder {
+  font-style: italic;
+}
+
+::-moz-placeholder {
+  font-style: italic;
+}
+
+.form-help {
+  display: block;
+  position: absolute;
+  /* 默认隐藏帮助文本，但屏幕阅读器可以读到 */
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+input:focus + .form-help {
+  padding: 0.5em;
+  margin-top: 0.5em;
+  border: 1px solid #2a80fa;
+  border-radius: 0.25em;
+  font-style: italic;
+  color: #737373;
+  background-color: #fff;
+  /* 覆盖'隐藏'属性 */
+  position: static;
+  width: auto;
+  height: auto;
+  clip: none;
+}
