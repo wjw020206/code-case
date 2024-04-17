@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>现代CSS布局表单</title>
+  </head>
+  <body>
+    <h1>Job application</h1>
+    <form id="application_form" action="/application/" method="post">
+      <div class="fieldset-wrapper">
+        <fieldset>
+          <legend>Your contact details</legend>
+          <!-- 姓名 -->
+          <p class="field field-text">
+            <label for="application-name">Name:</label>
+            <input name="application-name" id="application-name" type="text" />
+          </p>
+          <!-- 邮箱 -->
+          <p class="field field-text">
+            <label for="application-email">Email Address:</label>
+            <input
+              name="application-email"
+              id="application-email"
+              type="email"
+            />
+          </p>
+          <!-- 推特账号 -->
+          <p class="field field-text">
+            <label for="application-twitter">Twitter handle:</label>
+            <span class="field-prefixed">
+              <span
+                class="field-prefix"
+                id="application-twitter-prefix"
+                aria-label="You can omit the @"
+                >@</span
+              >
+              <input
+                name="application-twitter"
+                id="application-twitter"
+                type="text"
+                aria-describedby="application-twitter-prefix"
+              />
+            </span>
+          </p>
+        </fieldset>
+      </div>
+      <div class="fieldset-wrapper">
+        <fieldset>
+          <legend>Which languages have you mastered?</legend>
+          <ul class="checkboxes">
+            <li>
+              <input type="checkbox" name="lang-as" id="lang-as" />
+              <label for="lang-as">ActionScript</label>
+            </li>
+            <li>
+              <input type="checkbox" name="lang-basic" id="lang-basic" />
+              <label for="lang-basic">BASIC</label>
+            </li>
+            <li>
+              <input type="checkbox" name="lang-csharp" id="lang-csharp" />
+              <label for="lang-csharp">C#</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                name="lang-cplusplus"
+                id="lang-cplusplus"
+              />
+              <label for="lang-cplusplus">C++</label>
+            </li>
+            <li>
+              <input type="checkbox" name="lang-clojure" id="lang-clojure" />
+              <label for="lang-clojure">Clojure</label>
+            </li>
+            <li>
+              <input type="checkbox" name="lang-cobol" id="lang-cobol" />
+              <label for="lang-cobol">COBOL</label>
+            </li>
+            <li>
+              <input type="checkbox" name="lang-css" id="lang-css" />
+              <label for="lang-css">CSS</label>
+            </li>
+            <li>
+              <input type="checkbox" name="lang-haskell" id="lang-haskell" />
+              <label for="lang-haskell">Haskell</label>
+            </li>
+            <li>
+              <input type="checkbox" name="lang-html" id="lang-html" />
+              <label for="lang-html">HTML</label>
+            </li>
+            <li>
+              <input type="checkbox" name="lang-java" id="lang-java" />
+              <label for="lang-java">Java</label>
+            </li>
+            <li>
+              <input type="checkbox" name="lang-js" id="lang-js" />
+              <label for="lang-js">JavaScript</label>
+            </li>
+            <li>
+              <input type="checkbox" name="lang-objc" id="lang-objc" />
+              <label for="lang-objc">Objective-C</label>
+            </li>
+            <li>
+              <input type="checkbox" name="lang-python" id="lang-python" />
+              <label for="lang-python">Python</label>
+            </li>
+            <li>
+              <input type="checkbox" name="lang-ruby" id="lang-ruby" />
+              <label for="lang-ruby">Ruby</label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+      <button>Send application</button>
+    </form>
+    <script src="./js/modernizr-custom.js"></script>
+  </body>
+</html>
