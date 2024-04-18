@@ -1,0 +1,52 @@
+body {
+  font-family: Baskerville, Times, Times New Roman, serif;
+  font-size: 1.25em;
+  padding: 3em;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+.rules {
+  list-style: none;
+  /* 重置计数器的开始 */
+  counter-reset: ruleCount 2;
+  padding: 0;
+  margin: 0;
+}
+
+.rules li {
+  /* 每次增加ruleCount,默认为加1 */
+  counter-increment: ruleCount;
+  position: relative;
+  line-height: 1.5;
+  min-height: 1.75em;
+  border-left: 1.5em solid #aa031c;
+  max-width: 35em;
+  background-color: #e5212e;
+  color: #fff;
+  padding: 1em;
+  height: 2em;
+  transform: skewX(15deg);
+}
+
+.rules li:nth-child(even) {
+  background-color: #aa031c;
+  border-color: #6b0011;
+  transform: skewX(-15deg);
+}
+
+.rules li::before {
+  /* counter() 获取计时器的值 */
+  content: '§ ' counter(ruleCount);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 100% 100%;
+  transform: translate(-100%, -100%) rotate(-90deg);
+  line-height: 1.5em;
+  padding-left: 0.25em;
+  color: #fd858a;
+  padding-right: 0.25em;
+}
