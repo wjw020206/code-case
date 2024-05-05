@@ -1,0 +1,10 @@
+.hello-box {
+  width: 200px;
+  height: 200px;
+  transition: background-position 1s steps(6, start);
+  background: url(../images/step-animation.png) no-repeat 0 -1200px;
+}
+
+.hello-box:hover {
+  background-position: 0 0;
+}
