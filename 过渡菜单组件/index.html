@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>过渡菜单组件</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <script>
+      const html = document.getElementsByTagName('html')[0];
+      html.className += ' js';
+    </script>
+  </head>
+  <body>
+    <div class="expando">
+      <h2 class="expando-title">Top menu choices</h2>
+      <ol>
+        <li>Capricciosa</li>
+        <li>Margherita</li>
+        <li>Vesuvio</li>
+      </ol>
+      <ol
+        class="expando-list"
+        start="4"
+        aria-label="Top menu choices,continued."
+      >
+        <li>Calzone</li>
+        <li>Quattro Stagioni</li>
+        <li>Pescatore</li>
+        <li>Bolognese</li>
+        <li>Shawarma</li>
+        <li>Mexicana</li>
+        <li>Fungi</li>
+      </ol>
+    </div>
+
+    <script>
+      const expando = document.querySelector('.expando');
+      const expandoTitle = expando.querySelector('.expando-title');
+      const expandoList = expando.querySelector('.expando-list');
+      const expandedClass = 'is-expanded';
+
+      expandoList.setAttribute('aria-hidden', true);
+
+      const trigger = document.createElement('button');
+      const triggerText = document.createTextNode('Toggle full list');
+
+      trigger.appendChild(triggerText);
+
+      trigger.className = 'expando-trigger';
+
+      expandoTitle.appendChild(trigger);
+
+      const toggleExpanded = function (e) {
+        if (/(^|\s)is-expanded(\s|$)/.test(expando.className)) {
+          expando.className = expando.className.replace(' is-expanded', '');
+          expandoList.setAttribute('aria-hidden', 'true');
+        } else {
+          expando.className += ' is-expanded';
+          expandoList.setAttribute('aria-hidden', 'false');
+        }
+      };
+
+      if (trigger.addEventListener) {
+        trigger.addEventListener('click', toggleExpanded, false);
+      } else {
+        // For IE8:
+        if (trigger.attachEvent) {
+          trigger.attachEvent('onclick', toggleExpanded);
+        }
+      }
+    </script>
+  </body>
+</html>
