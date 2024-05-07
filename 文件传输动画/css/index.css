@@ -1,0 +1,100 @@
+body {
+  font-family: 'Myriad Pro', Frutiger, 'Lucida Grande', 'Lucida Sans',
+    'Lucida Sans Unicode', Verdana, sans-serif;
+  background-color: #edf5f8;
+  margin: 0;
+  padding: 1em;
+}
+
+button {
+  margin-top: 2em;
+  cursor: pointer;
+  border: 0;
+  padding: 0.5em 1em;
+  color: #fff;
+  border-radius: 0.25em;
+  outline: none;
+  font-size: 1em;
+  background-color: #173b6d;
+  background-image: -webkit-linear-gradient(top, #1a4a8e, #173b6d);
+  background-image: -moz-linear-gradient(top, #1a4a8e, #173b6d);
+  background-image: -o-linear-gradient(top, #1a4a8e, #173b6d);
+  background-image: linear-gradient(to bottom, #1a4a8e, #173b6d);
+  box-shadow: 0 0.25em 0 rgba(23, 59, 109, 0.3),
+    inset 0 1px 0 rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 150ms ease-in;
+  -moz-transition: all 150ms ease-in;
+  -o-transition: all 150ms ease-in;
+  transition: all 150ms ease-in;
+}
+button:active {
+  box-shadow: 0 0 0 rgba(23, 59, 109, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateY(0.25em);
+  -moz-transform: translateY(0.25em);
+  -ms-transform: translateY(0.25em);
+  -o-transform: translateY(0.25em);
+  transform: translateY(0.25em);
+}
+
+.upload {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  width: 400px;
+  margin-top: 100px;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  border-radius: 0.5em;
+  transform: translateZ(0);
+}
+
+.icon {
+  width: 4em;
+  background: none no-repeat 50% 50% / contain;
+}
+
+.computer-icon {
+  background-image: url(../images/monitor.svg);
+}
+
+.file-icon {
+  animation: jump 2s ease-in-out infinite;
+  background-image: url(../images/file.svg);
+}
+
+.server-icon {
+  position: relative;
+  z-index: 2;
+  background-image: url(../images/cloud_storage.svg);
+}
+
+.file-icon.is-paused {
+  animation-play-state: paused;
+}
+
+.file-icon.is-stopped {
+  display: none;
+  animation-play-state: paused;
+}
+
+.file-icon.is-stopped + .server-icon::after {
+  content: '';
+  display: block;
+  width: 3em;
+  height: 3em;
+  background: url(../images/checkmark.svg) 50% 50% no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 1.5em;
+  left: 60%;
+}
+
+@keyframes jump {
+  from {
+    transform: rotate(0) translateX(-170px) rotate(0) scale(1);
+  }
+  70%,
+  100% {
+    transform: rotate(175deg) translateX(-170px) rotate(-175deg) scale(0.5);
+  }
+}

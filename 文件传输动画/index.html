@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文件传输动画</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <h1>File uploading animation</h1>
+    <div class="upload">
+      <div class="icon computer-icon"></div>
+      <div class="icon file-icon is-paused"></div>
+      <div class="icon server-icon"></div>
+    </div>
+    <button type="button" class="button-pause">Play/pause animation</button>
+    <button type="button" class="button-stop">Finish/restart animation</button>
+
+    <script>
+      const icon = document.querySelector('.file-icon');
+      const pause = document.querySelector('.button-pause');
+      const stop = document.querySelector('.button-stop');
+      const prefixes = ['webkit', 'MS', ''];
+
+      function prefixedEvent(addOrRemove, prefixes, element, evt, callback) {
+        const l = prefixes.length;
+
+        for (let current = 0; current < l; current++) {
+          if (prefixes[current] === '') {
+            evt = evt.toLowerCase();
+          }
+          element[addOrRemove + 'EventListener'](
+            prefixes[current] + evt,
+            callback,
+            false
+          );
+        }
+      }
+
+      /* 切换动画的开始和结束 */
+      function toggleAnimation() {
+        if (icon.classList.contains('is-stopped')) {
+          prefixedEvent(
+            'remove',
+            prefixes,
+            icon,
+            'AnimationIteration',
+            stopAnimation
+          );
+          icon.classList.remove('is-stopped');
+        } else {
+          // If we are stopping, wait for the iteration to finish.
+          waitToStop();
+        }
+      }
+
+      /* 暂停动画 */
+      function pauseAnimation() {
+        icon.classList.toggle('is-paused');
+      }
+
+      /* 结束动画 */
+      function stopAnimation() {
+        icon.classList.add('is-stopped');
+      }
+
+      function waitToStop() {
+        prefixedEvent(
+          'add',
+          prefixes,
+          icon,
+          'AnimationIteration',
+          stopAnimation
+        );
+      }
+
+      pause.addEventListener('click', pauseAnimation, false);
+      stop.addEventListener('click', toggleAnimation, false);
+    </script>
+  </body>
+</html>
