@@ -1,0 +1,29 @@
+.csstransforms3d body {
+  perspective: 1000px;
+}
+
+.csstransforms3d .flip-wrapper {
+  position: relative;
+  transition: transform 0.25s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.csstransforms3d .flip-b {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  transform: rotateY(-180deg);
+}
+
+.csstransforms3d .flip-b,
+.csstransforms3d .flip-a {
+  /* 设置元素从背面看不到 */
+  backface-visibility: hidden;
+}
+
+.csstransforms3d .flip-wrapper.is-flipped {
+  transform: rotateY(180deg);
+}
