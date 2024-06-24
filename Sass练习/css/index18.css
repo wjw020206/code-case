@@ -1,0 +1,43 @@
+@charset "UTF-8";
+.p1 {
+  width: 10px;
+  height: 30px;
+  background-color: red;
+}
+
+.p2 {
+  width: 20px;
+  height: 30px;
+  background-color: red;
+}
+
+.p3 {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+}
+
+/* through写法 */
+.p1 {
+  width: 10px;
+  height: 30px;
+  background-color: red;
+}
+
+.p2 {
+  width: 20px;
+  height: 30px;
+  background-color: red;
+}
+
+.p3 {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+}
+
+.p4 {
+  width: 40px;
+  height: 30px;
+  background-color: red;
+}/*# sourceMappingURL=index18.css.map */

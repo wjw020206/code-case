@@ -1,0 +1,16 @@
+@for $i from 1 to 4 {
+  .p#{$i} {
+    width: 10px * $i;
+    height: 30px;
+    background-color: red;
+  }
+}
+
+/* through写法 */
+@for $i from 1 through 4 {
+  .p#{$i} {
+    width: 10px * $i;
+    height: 30px;
+    background-color: red;
+  }
+}

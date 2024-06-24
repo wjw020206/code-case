@@ -1,0 +1,22 @@
+// 全局变量
+$font-size: 16px;
+$color: green;
+$border-color: null;
+
+.container {
+  // 局部变量
+  $color: red;
+  // 通过使用 !global 给已有的全局变量赋值
+  $border-color: blue !global;
+  font-size: $font-size;
+  .content {
+    // 可以访问到 .container 里的 $color 变量
+    color: $color;
+  }
+}
+.footer {
+  // 无法访问到 .container 里的 $color 变量
+  color: $color;
+  // 可以访问到 .container 里的 $border-color 变量
+  border-color: $border-color;
+}

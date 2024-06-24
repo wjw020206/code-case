@@ -1,0 +1,16 @@
+.container {
+  color: green;
+}
+
+.p0 {
+  width: 0px;
+  height: 0px;
+  display: inline-block;
+}
+
+.p0 {
+  border-width: 30px;
+  border-top-width: 0;
+  border-color: transparent transparent black transparent;
+  border-style: dashed dashed solid dashed;
+}/*# sourceMappingURL=index17.css.map */

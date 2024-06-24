@@ -1,0 +1,57 @@
+@charset "UTF-8";
+.row-cols-1 > * {
+  width: 100%;
+}
+
+.row-cols-2 > * {
+  width: 50%;
+}
+
+.row-cols-3 > * {
+  width: 33.3333333333%;
+}
+
+.row-cols-4 > * {
+  width: 25%;
+}
+
+.row-cols-5 > * {
+  width: 20%;
+}
+
+.row-cols-6 > * {
+  width: 16.6666666667%;
+}
+
+/* 
+  定义线性渐变
+  @param $direction 方向
+  @param $gradients 颜色过渡值的列表
+ */
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(blue), to(green));
+  background-image: linear-gradient(to right, blue, green);
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(red), to(blue));
+  background-image: linear-gradient(to right, red, blue);
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(red), to(blue));
+  background-image: linear-gradient(to right, red, blue);
+}
+
+/*
+  函数接收任意参数
+*/
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(red), color-stop(green), to(blue));
+  background-image: linear-gradient(to right, red, green, blue);
+}
+
+.top {
+  width: 30px;
+  width: 30px;
+}/*# sourceMappingURL=index22.css.map */

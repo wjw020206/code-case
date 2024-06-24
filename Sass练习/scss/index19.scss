@@ -1,0 +1,35 @@
+#loading {
+  position: fixed;
+  top: 200px;
+  left: 46%;
+  span {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #3498db;
+    border-radius: 50%;
+    animation: loading 1s infinite ease-in-out;
+    @for $i from 1 to 6 {
+      &:nth-child(#{$i}) {
+        left: (20px * $i) - 20px;
+        animation-delay: ($i - 1) * 0.2s;
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0.3;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-20px);
+    background: green;
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(0px);
+  }
+}

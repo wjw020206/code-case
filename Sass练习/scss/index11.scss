@@ -1,0 +1,60 @@
+// 混入
+@mixin block {
+  width: 96%;
+  margin-left: 2%;
+  border-radius: 8px;
+  border: 1px #f6f6f6 solid;
+}
+
+.container {
+  @include block;
+}
+
+// 混入中包含了类
+@mixin warning-text {
+  .warn-text {
+    font-size: 12px;
+    color: rgb(255, 253, 123);
+    line-height: 180%;
+  }
+}
+
+.container2 {
+  @include warning-text;
+}
+
+@mixin flex-align($aitem) {
+  align-items: $aitem;
+}
+
+.container3 {
+  // @include flex-align(center);
+  // 可以指定对应的参数名的值
+  @include flex-align($aitem: center);
+}
+
+// 多个参数并定义参数默认值
+@mixin block-padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+.container4 {
+  @include block-padding(20px, 16px);
+}
+
+/**
+  定义线性渐变
+  @param $direction 方向
+  @param $gradients 颜色过渡的值的列表
+*/
+@mixin linear-gradient($direction, $gradients...) {
+  background-color: nth($gradients, 1);
+  background-image: linear-gradient($direction, $gradients);
+}
+
+.container5 {
+  @include linear-gradient(to right, #f00, orange, yellow);
+}

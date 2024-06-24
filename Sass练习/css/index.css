@@ -1,0 +1,20 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.container .header {
+  height: 90px;
+  line-height: 90px;
+}
+.container .header .log {
+  width: 100px;
+  height: 60px;
+}
+.container .center {
+  height: 600px;
+  background-color: #f00;
+}
+.container .footer {
+  font-size: 16px;
+  text-align: center;
+}/*# sourceMappingURL=index.css.map */

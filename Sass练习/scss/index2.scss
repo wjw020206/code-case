@@ -1,0 +1,19 @@
+// 父选择器
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  a {
+    color: #333;
+    &:hover {
+      text-decoration: underline;
+      color: #f00;
+    }
+  }
+  .top {
+    border: 1px #f2f2f2 solid;
+    &-left {
+      float: left;
+      width: 200px;
+    }
+  }
+}

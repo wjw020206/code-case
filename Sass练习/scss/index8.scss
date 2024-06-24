@@ -1,0 +1,13 @@
+// 变量类型
+$layer-index: 10;
+$border-width: 3px;
+$font-base-family: 'Open Sans', Helvetica, Sans-Serif;
+$top-bg-color: rgba(255, 147, 29, 0.6);
+$block-base-padding: 6px 10px 6px 10px;
+$blank-mode: true;
+$var: null; // 该类型的唯一值，表示缺少值，通常由函数返回以指示缺少结果
+$color-map: (
+  color1: #f00,
+  color2: #0f0,
+  color3: #00f,
+);

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+p {
+  font: 12px/30px Helvetica;
+}
+
+/*
+  文件说明部分
+  @author: CodePencil
+*/
+a.danger {
+  border-color: #f00;
+}/*# sourceMappingURL=index15.css.map */

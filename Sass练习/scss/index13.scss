@@ -1,0 +1,47 @@
+// 运算符
+
+// 等号运算符
+$theme: 1;
+.container {
+  @if $theme != 1 {
+    background-color: red;
+  } @else {
+    background-color: blue;
+  }
+}
+
+// 关系比较运算符
+$theme: 3;
+.container {
+  @if $theme >= 5 {
+    background-color: red;
+  } @else {
+    background-color: blue;
+  }
+}
+
+// 逻辑运算符
+$width: 100;
+$height: 200;
+$last: false;
+$index: 10;
+
+div {
+  @if $width > 50 and $height < 300 {
+    font-size: 16px;
+  } @else {
+    font-size: 14px;
+  }
+
+  @if $width > 200 or $height < 300 {
+    font-weight: 700;
+  } @else {
+    font-weight: 400;
+  }
+
+  @if not($index > 5) {
+    border-color: red;
+  } @else {
+    border-color: blue;
+  }
+}

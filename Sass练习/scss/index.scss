@@ -1,0 +1,21 @@
+// 嵌套写法
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  .header {
+    height: 90px;
+    line-height: 90px;
+    .log {
+      width: 100px;
+      height: 60px;
+    }
+  }
+  .center {
+    height: 600px;
+    background-color: #f00;
+  }
+  .footer {
+    font-size: 16px;
+    text-align: center;
+  }
+}

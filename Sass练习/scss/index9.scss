@@ -1,0 +1,8 @@
+// 变量默认值
+$color: #333;
+
+// 如果 $color 之前没有定义就使用如下默认值
+$color: #666 !default;
+.container {
+  border-color: $color;
+}

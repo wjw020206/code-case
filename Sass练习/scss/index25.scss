@@ -1,0 +1,8 @@
+@use './bootstrap' with($c-font-size: 80px);
+
+body {
+  font-size: bootstrap.$c-font-size;
+  width: bootstrap.c-column-width(3, 12);
+  // @include bootstrap.c-bgColor(#f00);
+  @include bootstrap.g-base(#f00);
+}

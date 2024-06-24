@@ -1,0 +1,66 @@
+@charset "UTF-8";
+p {
+  height: 30px;
+}
+
+.p0 {
+  background-color: #5c7a29;
+}
+
+.p1 {
+  /* 让颜色变亮 */
+  background-color: #aace6e;
+}
+
+.p2 {
+  /* 让颜色变暗,通常使用 color.scale() 代替该方案 */
+  background-color: #314116;
+}
+
+.p3 {
+  /* 降低颜色的透明度,通常使用 color.scale() 代替该方案 */
+  background-color: rgba(92, 122, 41, 0.6);
+}
+
+p::after {
+  /* quote() 是给文本加引号 */
+  content: "这是里面的内容";
+  /* unquote() 给文本取消引号 */
+  background-color: #F00;
+  /* str-length() 获取文本字符串的长度 */
+  z-index: 6;
+}
+
+p {
+  z-index: 15;
+  z-index: 6;
+  z-index: 8;
+  opacity: 0.5115467956;
+}
+
+p {
+  z-index: 1;
+  z-index: 3;
+  z-index: 3;
+  padding: 10px 20px 30px;
+  color: blue;
+}
+
+p {
+  font-size: 18px;
+  padding-right: 20px;
+}
+p::after {
+  content: '"small", "normal", "large" 10px, 20px, 10px, 30px';
+}
+
+.header {
+  background-color: #000;
+  content: ".a.b.c";
+  content: "a.disable";
+}
+
+.container {
+  color: #f00;
+  padding: 0 10px 0 10px;
+}/*# sourceMappingURL=index16.css.map */

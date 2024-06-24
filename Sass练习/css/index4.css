@@ -1,0 +1,17 @@
+.button.btn-success, .button.btn-default {
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.btn-default {
+  background-color: blue;
+}
+
+.btn-success {
+  background-color: green;
+}/*# sourceMappingURL=index4.css.map */

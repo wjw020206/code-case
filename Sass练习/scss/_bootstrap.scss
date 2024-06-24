@@ -1,0 +1,14 @@
+// @forward 'uses/common' show $font-size, column-width;
+@use 'uses/code';
+@forward 'uses/common' as c-* hide c-bgColor with (
+  $font-size: 30px !default
+);
+
+@use 'uses/common';
+// @forward 'uses/common' as c-* hide c-bgColor;
+@forward 'uses/global' as g-*;
+
+.block {
+  background-color: code.$color;
+  @include common.bgColor(#fff);
+}

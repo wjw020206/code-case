@@ -1,0 +1,17 @@
+// 占位符选择器
+
+// 通用样式
+.button%base {
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  user-select: none;
+}
+.btn-default {
+  @extend %base;
+  background-color: blue;
+}
+.btn-success {
+  @extend %base;
+  background-color: green;
+}

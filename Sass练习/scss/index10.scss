@@ -1,0 +1,6 @@
+// sass 导入语法(单位以及_可以省略)
+@import 'public';
+
+p {
+  color: $font-base-color;
+}

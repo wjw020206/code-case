@@ -1,0 +1,101 @@
+// 颜色函数
+p {
+  height: 30px;
+}
+
+.p0 {
+  background-color: #5c7a29;
+}
+
+.p1 {
+  /* 让颜色变亮 */
+  background-color: lighten(#5c7a29, 30%);
+}
+
+.p2 {
+  /* 让颜色变暗,通常使用 color.scale() 代替该方案 */
+  background-color: darken(#5c7a29, 15%);
+}
+
+.p3 {
+  /* 降低颜色的透明度,通常使用 color.scale() 代替该方案 */
+  background-color: opacify(rgba(#5c7a29, 0.1), 0.5);
+}
+
+// 字符串函数
+p {
+  &::after {
+    /* quote() 是给文本加引号 */
+    content: quote(这是里面的内容);
+    /* unquote() 给文本取消引号 */
+    background-color: unquote($string: '#F00');
+    /* str-length() 获取文本字符串的长度 */
+    z-index: str-length($string: 'sass学习');
+  }
+}
+
+// 数值函数
+p {
+  z-index: abs($number: -15); // abs() 返回绝对值
+  z-index: ceil(5.8); // ceil() 向上取整
+  z-index: max(5, 1, 6, 8, 3); // max() 返回数组中的最大值
+  opacity: random(); // random() 随机 0-1
+}
+
+// list函数
+p {
+  z-index: length(12px);
+  z-index: length(12px 5px 8px);
+  z-index: index(a b c d, c);
+  padding: append(10px 20px, 30px);
+  color: nth($list: red blue green, $n: 2);
+}
+
+// map函数
+$font-sizes: (
+  'small': 12px,
+  'normal': 18px,
+  'large': 24px,
+);
+$padding: (
+  top: 10px,
+  right: 20px,
+  bottom: 10px,
+  left: 30px,
+);
+p {
+  font-size: map-get($font-sizes, 'normal');
+  @if map-has-key($padding, 'right') {
+    padding-right: map-get($padding, 'right');
+  }
+  &::after {
+    content: map-keys($font-sizes) + ' ' + map-values($padding);
+  }
+}
+
+// selector 选择器函数
+.header {
+  background-color: #000;
+  content: selector-append('.a', '.b', '.c') + '';
+  content: selector-unify('a', '.disable') + '';
+}
+
+// 自检函数
+$color: #f00;
+@mixin padding($left: 0, $top: 0, $right: 0, $bottom: 0) {
+  padding: $top $right $bottom $left;
+}
+
+.container {
+  // 判断变量在当前作用域是否存在
+  @if variable-exists(color) {
+    color: $color;
+  } @else {
+    content: '$color不存在';
+  }
+
+  // 判断混入在当前作用域是否存在
+  @if mixin-exists(padding) {
+    @include padding($left: 10px, $right: 10px);
+  }
+}

@@ -1,0 +1,11 @@
+@import 'common';
+@import 'global';
+@import 'global';
+
+body {
+  font-size: $font-size;
+  width: column-width(3, 12);
+  @include bgColor(#f00);
+  @include base(#fff);
+  @include base(#000);
+}

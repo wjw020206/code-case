@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.container {
+  /* 加运算 */
+  width: 70;
+  width: 70%;
+  width: 70%;
+  width: 30px;
+  /* 减运算 */
+  width: 20;
+  width: 20%;
+  width: 30%;
+  width: 10px;
+  width: 23.3333333333px;
+  /* 乘运算 */
+  width: 200;
+  width: 50%;
+  /* 除运算 */
+  width: 10/5;
+  width: 2;
+  width: 10px;
+  width: 25;
+  width: 8px;
+  /* 取模 */
+  width: 1;
+  width: 2px;
+  width: 2px;
+  width: 1%;
+  width: 5%;
+  width: 10.0001px;
+  width: 10px;
+  content: "foobar";
+  content: barfoo;
+  content: foobar;
+  content: "foobar";
+}/*# sourceMappingURL=index14.css.map */

@@ -1,0 +1,20 @@
+// 插值语句
+
+$font-size: 12px;
+$line-height: 30px;
+
+p {
+  font: #{$font-size}/#{$line-height} Helvetica;
+}
+
+$class-name: danger;
+$attr: color;
+$author: 'CodePencil';
+
+/*
+  文件说明部分
+  @author: #{$author}
+*/
+a.#{$class-name} {
+  border-#{$attr}: #f00;
+}
